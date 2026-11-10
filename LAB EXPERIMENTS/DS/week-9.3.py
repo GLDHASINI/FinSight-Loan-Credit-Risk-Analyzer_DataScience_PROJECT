@@ -1,0 +1,26 @@
+
+import numpy as np
+from scipy import stats
+
+print("----- Two-Sample T-Test -----")
+
+class_A = np.array([78, 82, 85, 88, 90])
+class_B = np.array([72, 75, 70, 68, 74])
+
+t_stat, p_value = stats.ttest_ind(class_A, class_B)
+
+print("Class A Marks:")
+print(class_A)
+
+print("\nClass B Marks:")
+print(class_B)
+
+print("\nt-Statistic:", t_stat)
+print("P-Value:", p_value)
+
+alpha = 0.05
+
+if p_value < alpha:
+    print("\nResult: Reject Null Hypothesis")
+else:
+    print("\nResult: Fail to Reject Null Hypothesis")
